@@ -6,7 +6,7 @@
     <ion-grid>
       <ion-row>
         <ion-col col-sm-4 col-6><ion-title>Produtos</ion-title></ion-col>
-        <ion-col  col-sm-8 col-6><ion-searchbar placeholder='Buscar Produtos'>Pesquisar</ion-searchbar></ion-col>
+        <ion-col  col-sm-8 col-6><ion-searchbar placeholder='Buscar Produtos' (keydown)="searchProduct()"  [(ngModel)]='search'>Pesquisar</ion-searchbar></ion-col>
       </ion-row>
     </ion-grid>    
     
@@ -17,15 +17,19 @@
 <ion-content padding>
 
   <ion-grid>
-    <ion-row>
+    <p *ngFor="let abc of tmp">
+        {{abc.name}}
+      </p>
+    <ion-row *ngFor="let prod of products" >
       <ion-list>
-        <ion-item>
+
+        <ion-item >
           <ion-thumbnail item-start>
             <img src="img/noavaiable.png">
           </ion-thumbnail>
-          <h2>Revendedor</h2>
-          <p>Contato</p>
-          <button ion-button clear item-end (click)="checkRemote()">Info. Adicional</button>
+          <h2>{{prod.name_retailer}}</h2>
+          <p>Quantidade - {{prod.quantity}}</p>
+          <button ion-button clear item-end >Distância - {{prod.distance}} KM</button>
         </ion-item>
       </ion-list>
     </ion-row>

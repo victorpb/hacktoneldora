@@ -63,12 +63,14 @@ class Users (APIView):
 
 class Storage(APIView):
     
-    def _get_object (self, user=None, product=None ):
+    def _get_object (self, user=None, product=None, name=None ):
         try:
             if user:
                 storage = TblStorage.objects.filter(user=user)
             elif product:
                 storage = TblStorage.objects.filter(product = product)
+            elif name:
+                storage = TblStorage.objects.filter(product__name__icontains = name)
             else:
                 storage = TblStorage.objects.all()
         except:
@@ -79,9 +81,10 @@ class Storage(APIView):
     def get(self, request, format=None):
         user = request.GET.get('user', None)
         product = request.GET.get('product', None)
+        name = request.GET.get('name', None)
 
         try:
-            storage = self._get_object(user, product)
+            storage = self._get_object(user, product, name)
             storage = StorageSerializer(storage, many=True).data
             return Response(storage)
         except Exception as e:
