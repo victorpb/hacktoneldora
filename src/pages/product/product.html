@@ -5,8 +5,8 @@
     </button>
     <ion-grid>
       <ion-row>
-        <ion-col col-2><ion-title>Produtos</ion-title></ion-col>
-        <ion-col col-10><ion-searchbar placeholder='Buscar Produtos'>Pesquisar</ion-searchbar></ion-col>
+        <ion-col col-sm-4 col-6><ion-title>Produtos</ion-title></ion-col>
+        <ion-col  col-sm-8 col-6><ion-searchbar placeholder='Buscar Produtos'>Pesquisar</ion-searchbar></ion-col>
       </ion-row>
     </ion-grid>    
     
@@ -25,7 +25,7 @@
           </ion-thumbnail>
           <h2>Revendedor</h2>
           <p>Contato</p>
-          <button ion-button clear item-end>Info. Adicional</button>
+          <button ion-button clear item-end (click)="checkRemote()">Info. Adicional</button>
         </ion-item>
       </ion-list>
     </ion-row>
