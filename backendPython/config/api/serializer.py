@@ -11,7 +11,7 @@ class ProductsSerializer(serializers.ModelSerializer):
         fields = '__all__'
     
     def get_category(self, obj):
-        cat = TblProductCategory.objects.get(id=1)
+        cat = TblProductCategory.objects.get(id=obj.category.id)
         return cat.name
 
 class UsersSerializer(serializers.ModelSerializer):
@@ -22,14 +22,25 @@ class UsersSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class StorageSerializer(serializers.ModelSerializer):
-    
+    name_retailer = serializers.SerializerMethodField()
+    distance = serializers.SerializerMethodField()
     class Meta:
         model = TblStorage
         fields = '__all__'
 
+    def get_name_retailer(self, obj):
+        
+        user = TblUsers.objects.get(id = obj.user)
+        return user.user
+
+    def get_distance(self, obj):
+        user = TblUsers.objects.get(id = obj.user)
+        return user.distance
+
 class SharingSerializer(serializers.ModelSerializer):
     send_order = serializers.SerializerMethodField()
-
+    name_product = serializers.SerializerMethodField()
+    value_product = serializers.SerializerMethodField()
     class Meta:
         model = TblSharing
         fields = '__all__'
@@ -41,6 +52,14 @@ class SharingSerializer(serializers.ModelSerializer):
             return True
         else:
             return False
+    
+    def get_name_product(self, obj):
+        return obj.product.name
+    
+    def get_value_product(self, obj):
+        return obj.product.value
+
+
 
 class ChatSerializer(serializers.ModelSerializer):
     
