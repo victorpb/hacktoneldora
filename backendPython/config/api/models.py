@@ -125,6 +125,7 @@ class TblChat(models.Model):
     send_date = models.DateTimeField(default=timezone.now)
     receive_user = models.ForeignKey('TblUsers', models.DO_NOTHING, db_column='receive_user', related_name='receive_user')
     receive_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    message = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -168,6 +169,8 @@ class TblSharing(models.Model):
     receive_user = models.ForeignKey('TblUsers', models.DO_NOTHING, db_column='receive_user', related_name='receive_user1')
     receive_date = models.DateTimeField(blank=True, null=True)
     product = models.ForeignKey(TblProduct, models.DO_NOTHING, db_column='product')
+    quantity = models.IntegerField()
+    status = models.IntegerField()
 
     class Meta:
         managed = False
@@ -197,6 +200,7 @@ class TblUsers(models.Model):
     status = models.CharField(max_length=45, blank=True, null=True)
     date = models.DateTimeField()
     email = models.CharField(max_length=45)
+    distance = models.IntegerField()
 
     class Meta:
         managed = False
