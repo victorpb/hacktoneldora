@@ -9,6 +9,7 @@ import { ProductPage } from '../pages/product/product';
 import { myProductPage } from '../pages/myProduct/myProduct';
 import { myPointPage } from '../pages/myPoint/myPoint';
 import { RequestPage } from '../pages/request/request';
+import { ChatPage } from '../pages/chat/chat';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,7 +30,7 @@ export class MyApp {
       { title: 'Fazer Pedido', component: ProductPage },
       { title: 'Meus produtos', component: myProductPage },
       { title: 'Pedidos', component: RequestPage },
-      { title: 'Chat', component: ListPage },
+      { title: 'Chat', component: ChatPage },
       { title: 'Meus Pontos', component: myPointPage },
       { title: 'Sair', component: ListPage },
     ];

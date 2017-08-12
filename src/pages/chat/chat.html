@@ -1,0 +1,42 @@
+<ion-header >
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12><ion-title>Chat</ion-title></ion-col>
+      </ion-row>
+    </ion-grid>    
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Revendedor(a)</ion-label>
+    <ion-select (ionChange)="recoverChat()" [(ngModel)]="userSelected">
+          <ion-option *ngFor="let employee of users" [value]="employee.id">{{employee.user}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+      <p *ngFor="let i of currentChat">
+        {{i.message}}
+      </p>
+
+  </ion-row>
+  <ion-row> 
+      <ion-input col-10 type="text" placeholder="Envie uma mensagem" [(ngModel)]=message></ion-input>
+      <button col-2 (click)="sendMessage()"> Enviar </button> 
+  </ion-row>
+</ion-grid>
+ 
+</ion-content>

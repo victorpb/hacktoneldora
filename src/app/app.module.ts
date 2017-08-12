@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ProductPage } from '../pages/product/product';
 import { myProductPage } from '../pages/myProduct/myProduct';
+import { ChatPage } from '../pages/chat/chat';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     ProductPage,
     myProductPage,
+    ChatPage,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     ProductPage,
     myProductPage,
+    ChatPage,
   ],
   providers: [
     StatusBar,
