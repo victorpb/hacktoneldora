@@ -1,0 +1,74 @@
+<ion-header >
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2><ion-title>Meus Produtos</ion-title></ion-col>
+        <ion-col col-10><ion-searchbar placeholder='Buscar Produtos'>Pesquisar</ion-searchbar></ion-col>
+      </ion-row>
+    </ion-grid>    
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <!-- Header -->
+    <ion-row>
+      <ion-col>
+        <strong>Produto</strong>
+      </ion-col>
+      <ion-col>
+        <strong>Em estoque</strong>
+      </ion-col>
+      <ion-col>
+        <strong>Ação</strong>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Nome Produto.
+      </ion-col>
+      <ion-col>
+        99
+      </ion-col>
+      <ion-col>
+        <strong> <ion-icon name="md-open"></ion-icon></strong>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label stacked>Produto</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label stacked>Quantidade</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <button color="custom" ion-button >Salvar</button>   
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

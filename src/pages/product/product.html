@@ -1,9 +1,15 @@
 <ion-header >
   <ion-navbar color="custom">
-<!--     <button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button> -->
-    <ion-title>Entrar</ion-title>
+    </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2><ion-title>Produtos</ion-title></ion-col>
+        <ion-col col-10><ion-searchbar placeholder='Buscar Produtos'>Pesquisar</ion-searchbar></ion-col>
+      </ion-row>
+    </ion-grid>    
+    
   </ion-navbar>
 
 </ion-header>
@@ -12,28 +18,33 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col></ion-col>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="img/noavaiable.png">
+          </ion-thumbnail>
+          <h2>Revendedor</h2>
+          <p>Contato</p>
+          <button ion-button clear item-end>Info. Adicional</button>
+        </ion-item>
+      </ion-list>
     </ion-row>
     <ion-row>
-      <ion-col col-2 col-sm-2></ion-col>
-      <ion-col col-8 col-sm-8>
+      <ion-col>
         <ion-list>
           <ion-item>
-            <ion-label stacked>CPF</ion-label>
+            <ion-label stacked>Quantidade</ion-label>
             <ion-input type="text"></ion-input>
           </ion-item>
-
-          <ion-item>
-            <ion-label stacked>Senha</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-
         </ion-list>
       </ion-col>
-      <ion-col col-2 col-sm-2></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col></ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <button color="custom" ion-button >Solicitar</button>   
+          </ion-item>
+        </ion-list>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
