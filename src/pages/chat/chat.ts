@@ -76,8 +76,20 @@ export class ChatPage {
     var send_user = 1;
     var receptor_user = this.userSelected;
     // POST TO SEND to DB
-
+    var datab = {
+      'send_user':send_user,
+      'receive_user':receptor_user,
+      'message':val,
+    };
     this.message = '';
+    return new Promise(resolve => {
+			this.http.post('http://127.0.0.1:8000/api/chat/',datab).map(res => res.json()).
+			subscribe(data => {
+        console.log(data);
+        this.recoverChat();
+			})
+		});
+    
   }
 
 
